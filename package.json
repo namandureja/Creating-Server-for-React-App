@@ -1,0 +1,25 @@
+{
+  "name": "creating-server-react-app",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "Hi, here I am creating a server using Node.js to communicate with React App; Created for Google Code-in 2019",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "serverName": "GCI Server by ishaanndas",
+  "serverVersion": "0.1.0",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishaan-das/Creating-Server-for-React-App.git"
+  }
+}
