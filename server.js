@@ -9,7 +9,17 @@ const app = express();
 const PORT = 8080;
 
 //combining the two json files into a single json object
-const all_info = Object.assign(cat_info, product_info);
+const CombineJson = () => {
+  var cid, result = new Array();
+  for (var i = 0; i < product_info.products.length; i++) {
+    cid = product_info.products[i].categoryId;
+    for (var j = 0; j < cat_info.categories.length; j++) {
+      if (cid == cat_info.categories[j].categoryId)
+        result.push(Object.assign(product_info.products[i], cat_info.categories[j]));
+    }
+  }
+  return result;
+}
 
 // create a route for the app
 app.get('/', (req, res) => {
@@ -18,7 +28,7 @@ app.get('/', (req, res) => {
 
 //creating an endpoint for retrieving all products
 app.get('/products/all', (request, response) => {
-  response.send(all_info);
+  response.send(CombineJson());
 });
 
 //creating an endpoint for getting products by id and calling a method to find the product
@@ -28,22 +38,22 @@ app.get('/products/:id', (request, response) => {
 
 //creating an endpoint for getting products by their category ID
 app.get('/category/:ctyId', (request, response) => {
-  var i;
-  var result = new Array();
-  for (i = 0; i < product_info.products.length; i++) {
-    if (product_info.products[i].categoryId == request.params.ctyId)
-      result.push(product_info.products[i]); //creating an array of the matching results
+  var i, result = new Array(), Json = CombineJson();
+  for (i = 0; i < Json.length; i++) {
+    if (Json[i].categoryId == request.params.ctyId)
+      result.push(Json[i]); //creating an array of the matching results
   }
   response.send(result);
 });
 
-//searching across the products.json to find the required product
+//searching across the combined json to find the required product
 const findProdById = (id) => {
-  const key = Object.keys(product_info.products).find(product => product_info.products[product].id === id)
-  return product_info.products[key]
+  const json = CombineJson();
+  let element = json.find(product => product.id === id);
+  return element;
 }
 
 // make the server listen to requests
 app.listen(PORT, () => {
-  console.log(`Server running at: http://localhost:${PORT}/` + all_info);
+  console.log(`Server running at: http://localhost:${PORT}/`);
 });
