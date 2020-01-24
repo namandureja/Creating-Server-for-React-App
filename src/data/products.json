@@ -1,0 +1,100 @@
+{
+    "products": [
+        {
+            "id": "P001",
+            "categoryId": "cty01",
+            "name": "Pine Apple",
+            "unit": "Kg",
+            "pricePerUnit": 1.2,
+            "stocks": 10
+        },
+        {
+            "id": "P002",
+            "categoryId": "cty01",
+            "name": "Mango",
+            "unit": "Kg",
+            "pricePerUnit": 1.6,
+            "stocks": 12
+        },
+        {
+            "id": "P003",
+            "categoryId": "cty01",
+            "name": "Banana",
+            "unit": "Dozens",
+            "pricePerUnit": 6.5,
+            "stocks": 23
+        },
+        {
+            "id": "p004",
+            "categoryId": "cty02",
+            "name": "Onions",
+            "unit": "Kg",
+            "pricePerUnit": 7.2,
+            "stocks": 14
+        },
+        {
+            "id": "P005",
+            "categoryId": "cty02",
+            "name": "Potatoes",
+            "unit": "Kg",
+            "pricePerUnit": 4.2,
+            "stocks": 32
+        },
+        {
+            "id": "P006",
+            "categoryId": "cty02",
+            "name": "Lettuce",
+            "unit": "g",
+            "pricePerUnit": 1.1,
+            "stocks": 59
+        },
+        {
+            "id": "P007",
+            "categoryId": "cty03",
+            "name": "Milk",
+            "unit": "L",
+            "pricePerUnit": 18,
+            "stocks": 34
+        },
+        {
+            "id": "P008",
+            "categoryId": "cty03",
+            "name": "Cheese",
+            "unit": "g",
+            "pricePerUnit": 10,
+            "stocks": 27
+        },
+        {
+            "id": "P009",
+            "categoryId": "cty03",
+            "name": "Butter",
+            "unit": "g",
+            "pricePerUnit": 19,
+            "stocks": 33
+        },
+        {
+            "id": "P010",
+            "categoryId": "cty04",
+            "name": "Mango Juice",
+            "unit": "L",
+            "pricePerUnit": 14,
+            "stocks": 24
+        },
+        {
+            "id": "P011",
+            "categoryId": "cty04",
+            "name": "Litchi Juice",
+            "unit": "L",
+            "pricePerUnit": 13,
+            "stocks": 7
+        },
+        {
+            "id": "P012",
+            "categoryId": "cty04",
+            "name": "Mixed Fruit",
+            "unit": "L",
+            "pricePerUnit": 14,
+            "stocks": 4
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "categories": [
+        {
+            "categoryId": "cty01",
+            "categoryName": "Fruits"
+        },
+        {
+            "categoryId": "cty02",
+            "categoryName": "Vegetables"
+        },
+        {
+            "categoryId": "cty03",
+            "categoryName": "Dairy"
+        },
+        {
+            "categoryId": "cty04",
+            "categoryName": "Juices"
+        }
+    ]
+}
