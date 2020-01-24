@@ -9,7 +9,7 @@ const app = express();
 const PORT = 8080;
 
 //combining the two json files into a single json object
-const CombineJson = () => {
+const combinedProductsData = () => {
   var cid, result = new Array();
   for (var i = 0; i < product_info.products.length; i++) {
     cid = product_info.products[i].categoryId;
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 //creating an endpoint for retrieving all products
 app.get('/products/all', (request, response) => {
-  response.send(CombineJson());
+  response.send(combinedProductsData());
 });
 
 //creating an endpoint for getting products by id and calling a method to find the product
@@ -38,17 +38,17 @@ app.get('/products/:id', (request, response) => {
 
 //creating an endpoint for getting products by their category ID
 app.get('/category/:ctyId', (request, response) => {
-  var i, result = new Array(), Json = CombineJson();
-  for (i = 0; i < Json.length; i++) {
-    if (Json[i].categoryId == request.params.ctyId)
-      result.push(Json[i]); //creating an array of the matching results
+  var i, result = new Array(), combinedProductData = combinedProductsData();
+  for (i = 0; i < combinedProductData.length; i++) {
+    if (combinedProductData[i].categoryId == request.params.ctyId)
+      result.push(combinedProductData[i]); //creating an array of the matching results
   }
   response.send(result);
 });
 
 //searching across the combined json to find the required product
 const findProdById = (id) => {
-  const json = CombineJson();
+  const json = combinedProductsData();
   let element = json.find(product => product.id === id);
   return element;
 }
